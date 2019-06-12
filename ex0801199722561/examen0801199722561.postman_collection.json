@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "53188a3f-a901-40d0-8ff2-c5e32c72be32",
+		"name": "examen0801199722561",
+		"description": "coleccion de pruebas api una por una",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "docs",
+			"item": [
+				{
+					"name": "http://localhost:3000/api/recetas/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/recetas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recetas",
+								""
+							]
+						},
+						"description": "get de toda la coleccion"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/api/recetas/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "receta",
+									"value": "medica 2",
+									"type": "text"
+								},
+								{
+									"key": "precio",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "tipo",
+									"value": "urgencia",
+									"type": "text"
+								},
+								{
+									"key": "observacion",
+									"value": "sangre a",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "activo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/recetas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recetas",
+								""
+							]
+						},
+						"description": "guarda nueva receta"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/api/recetas/d8da20f5-1363-436b-8698-70fc92343146",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "receta",
+									"value": "medica 2",
+									"type": "text"
+								},
+								{
+									"key": "precio",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "tipo",
+									"value": "urgencia",
+									"type": "text"
+								},
+								{
+									"key": "observacion",
+									"value": "sangre c",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "activo put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/recetas/d8da20f5-1363-436b-8698-70fc92343146",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recetas",
+								"d8da20f5-1363-436b-8698-70fc92343146"
+							]
+						},
+						"description": "put"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/api/recetas/d8da20f5-1363-436b-8698-70fc92343146",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "receta",
+									"value": "medica 2",
+									"type": "text"
+								},
+								{
+									"key": "precio",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "tipo",
+									"value": "urgencia",
+									"type": "text"
+								},
+								{
+									"key": "observacion",
+									"value": "sangre c",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "activo put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/recetas/d8da20f5-1363-436b-8698-70fc92343146",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recetas",
+								"d8da20f5-1363-436b-8698-70fc92343146"
+							]
+						},
+						"description": "delete"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/api/recetas/3db10027-6673-4242-913e-c27cbe1562c6",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/recetas/3db10027-6673-4242-913e-c27cbe1562c6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recetas",
+								"3db10027-6673-4242-913e-c27cbe1562c6"
+							]
+						},
+						"description": "get por id establecido\n"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
