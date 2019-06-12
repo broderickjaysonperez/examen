@@ -1,7 +1,7 @@
 var express = require('express');
 var router =express.Router();
 
-
+var uuid =require('uuid/v4');
 
 var recetaCollection =[];
 var recetaStruct = {
@@ -13,8 +13,27 @@ observacion:'',
 estado:''
 }
 
+
+recetaCollection.push(
+    Object.assign(
+    {},
+    personaStruct,
+    {
+        id:uuid(),
+        receta:'medica',
+        precio:'100',
+        tipo:'urgencia',
+        observacion:'sangre o',
+        estado:'activo'
+    }
+    )
+);
+
+
+
  router.get('/',(req ,res ,next)=>{
-    res.status(403).json({msg:"not implemented"});
+   
+    res.status(200).json(recetaCollection);
 
  });//get
 
@@ -27,7 +46,16 @@ estado:''
 
 
  router.post('/',(req ,res ,next)=>{
-    res.status(403).json({msg:"not implemented"});
+
+    var newreceta = Object.assign(
+        {},
+        recetaStruct,
+        {id:uuid()},
+        );
+        recetaCollection.push(newreceta);
+
+        res.status(200).json(newreceta);
+  
  });//post
 
 
