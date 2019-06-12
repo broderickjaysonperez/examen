@@ -17,7 +17,7 @@ estado:''
 recetaCollection.push(
     Object.assign(
     {},
-    personaStruct,
+    recetaStruct,
     {
         id:uuid(),
         receta:'medica',
@@ -30,18 +30,35 @@ recetaCollection.push(
 );
 
 
+//quinto
+router.get('/:id',(req ,res ,next)=>{
+    if (!req.params.id)return next();
+    
+         var id=req.params.id;
+         var receta =recetaCollection.filter((e,i)=>{
+            return (e.id ===id);
+         });//filter
 
- router.get('/',(req ,res ,next)=>{
-   
-    res.status(200).json(recetaCollection);
+    if(receta.length >0 ){
+        res.status(200).json(receta[0]);
+    }else{
+    
+        res.status(404).json({});
+    }
+    //..............................................................
+    });//get one by one 
 
- });//get
 
 
- router.get('/:id',(req ,res ,next)=>{
-    res.status(403).json({msg:"not implemented"});
+    router.get('/',(req ,res ,next)=>{
+     
+        //tercero 
+        //obtiene colleccion de persona
+        res.status(200).json(recetaCollection);
+    //....................................
+     });//get
 
-});//get one by one 
+
 
 
 
@@ -59,12 +76,46 @@ recetaCollection.push(
  });//post
 
 
- router.put('/:id',(req ,res ,next)=>{
 
+
+
+
+ router.put('/:id',(req ,res ,next)=>{
+    var id =req.param.id;
+    var modifiedreceta = {};
+   var originalreceta = {};
+
+    recetaCollection =recetaCollection.map((e,i)=> {
+       if(e.id ===id){
+           originalreceta = Object.assign({},e);
+           return modifiedreceta =Object.assign({},e,req.body);
+       }
+       return e;
+
+    }
+    );//map
+
+       res.status(200).json({ o: originalreceta, m: modifiedreceta});
 });//put
 
-router.delete('/:id',(req ,res ,next)=>{
 
+
+
+
+router.delete('/:id',(req ,res ,next)=>{
+    var id =req.param.id;
+     var deletereceta = {};
+
+     recetaCollection =recetaCollection.filter((e,i)=> {
+        if(e.id ===id){
+            deletereceta = Object.assign({},e);
+            return false;
+        }
+        return true;
+
+     }
+     );//filter
+     res.status(200).json({ d: deletereceta, c: recetaCollection});
 });//delete
 
 module.exports = router;

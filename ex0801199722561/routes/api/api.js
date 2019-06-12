@@ -1,8 +1,8 @@
 var express= require('express');
 var router = express.Router();
 
-var recetaRoutes = require('./personas');
+var recetaRoutes = require('./recetas');
 
-router.use('/personas',recetaRoutes);
+router.use('/recetas',recetaRoutes);
 
 module.exports = router;
